@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: black;
+  color: dimgrey;
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+
+nav {
+  width: 33.3%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
