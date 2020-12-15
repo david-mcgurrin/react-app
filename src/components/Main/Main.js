@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserInfo from '../UserInfo/UserInfo';
 import Post from '../Post/Post';
 import './main.css';
 
@@ -6,13 +7,7 @@ class Main extends Component {
   render() {
     return <main>
       <aside>
-        <div>
-          <h2>Username</h2>
-          <p>Date</p>
-          <textarea rows="4" cols="50">
-            
-          </textarea>
-        </div>
+        <UserInfo name="@david-mcgurrin" numPosts="50"/>
       </aside>
       <section>
         <h2>Micropost Feed</h2>
