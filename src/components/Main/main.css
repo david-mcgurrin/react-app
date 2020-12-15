@@ -1,0 +1,13 @@
+main {
+  display: flex;
+  max-width: 1400px;
+  margin: 50px auto;
+}
+
+aside {
+  width: 33.3%;
+}
+
+section {
+  width: 66.6%;
+}

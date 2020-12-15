@@ -1,15 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import MyFirstComponent from './components/MyFirstComponent';
-import MyFancyComponent from './components/MyFancyComponent';
 import Header from './components/Header';
+import Main from './components/Main';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      {/* <MyFirstComponent/>
-      <MyFancyComponent name="Rup"/> */}
+      <Main/>
     </div>
   );
 }
