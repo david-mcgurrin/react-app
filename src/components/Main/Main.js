@@ -7,7 +7,8 @@ class Main extends Component {
   render() {
     return <main>
       <aside>
-        <UserInfo name="@david-mcgurrin" numPosts="50"/>
+        <UserInfo name="@david-mcgurrin"/>
+        {/* <UserInfo name="@david-mcgurrin" numPosts="50"/> */}
       </aside>
       <section>
         <h2>Micropost Feed</h2>
