@@ -1,0 +1,14 @@
+.post {
+  background: #dcdcdc;
+  padding: 10px;
+}
+
+.post:nth-child(odd) {
+  background: #efefef;
+  padding: 10px;
+}
+
+.post-date {
+  font-size: .7em;
+  font-style: italic;
+}
