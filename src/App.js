@@ -9,6 +9,8 @@ import Main from './components/Main';
 import About from './components/About';
 import Account from './components/Account';
 
+import './App.css';
+
 function App() {
   return (
     <Router>
