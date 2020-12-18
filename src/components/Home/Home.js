@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import UserInfo from '../UserInfo/';
-import Post from '../Post/';
-import PostsAPI from '../PostsAPI/';
-import './main.css';
+import UserInfo from '../UserInfo';
+import PostsAPI from '../Posts';
+import './Home.css';
 
-class Main extends Component {
+class Home extends Component {
   render() {
     return <main>
       <aside>
@@ -19,4 +18,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Home;

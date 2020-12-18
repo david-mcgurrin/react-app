@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import './postsAPI.css';
+import './Posts.css';
 
-const PostsAPI = () => {
+const Posts = () => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -28,4 +28,4 @@ const PostsAPI = () => {
   </div>
 };
 
-export default PostsAPI;
+export default Posts;

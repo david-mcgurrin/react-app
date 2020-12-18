@@ -1,11 +1,10 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Header from './components/Header';
-import Main from './components/Main';
+import Home from './components/Home';
 import About from './components/About';
 import Account from './components/Account';
 
@@ -24,7 +23,7 @@ function App() {
             <Account />
           </Route>
           <Route path="/">
-            <Main/>
+            <Home/>
           </Route>
         </Switch>
       </div>
