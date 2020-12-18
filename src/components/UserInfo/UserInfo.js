@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function UserInfo(props) {
-  const [count, setCount] = useState(10);
-  const {name} = props;
+function UserInfo() {
+  const [user, setUser] = useState([]);
+  const count = 1;
+
+  useEffect(() => {
+    async function getData() {
+      const response = await fetch('https://staging.quotable.io/quotes/KBk2VabfrRne');
+      const data = await response.json();
+      setUser(data);
+    }
+    getData();
+  }, []);
   
   return  <div>
-    <h2>{name}</h2>
+    <h2>{user.author}</h2>
     <p>{count} posts</p>
     <textarea rows="4" cols="30">
       
