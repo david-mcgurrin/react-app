@@ -16,7 +16,7 @@ const Posts = () => {
 
   return <div className="micropost_feed">
     <ul>
-      {results.map((quote, i) => (
+      {results.map((quote) => (
         <li key={quote._id}>
           <div>
             <p className="author">{quote.author}</p>

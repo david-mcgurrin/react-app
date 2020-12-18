@@ -6,7 +6,7 @@ import './header.css';
 
 function Header() {
   return <header>
-    <h1 className="logo"><Link to="/">Sample App</Link></h1>
+    <h1 className="logo"><Link to="/">Micro Quote</Link></h1>
     <Nav/>
   </header>;
 }
