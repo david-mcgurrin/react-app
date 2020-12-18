@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Account from './components/Account';
+import Footer from './components/Footer';
 
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
             <Home/>
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );

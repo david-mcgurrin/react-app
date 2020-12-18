@@ -1,6 +1,7 @@
 main {
   display: flex;
   padding-top: 120px;
+  min-height: 100vh;
 }
 
 aside {
