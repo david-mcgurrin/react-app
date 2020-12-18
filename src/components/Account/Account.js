@@ -12,9 +12,9 @@ const Account = () => {
     getData();
   }, []);
 
-  return <div>
+  return <section className="main">
     <h2>Hello, {user.author}!</h2>
-  </div>
+  </section>
 };
 
 export default Account;

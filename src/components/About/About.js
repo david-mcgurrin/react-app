@@ -1,9 +1,9 @@
 import React from "react";
 
 const About = () => {
-  return <section>
+  return <section className="main">
     <h2>About Us!</h2>
-  </section>;
+  </section>
 };
 
 export default About;

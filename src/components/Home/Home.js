@@ -8,7 +8,6 @@ class Home extends Component {
     return <main>
       <aside>
         <UserInfo/>
-        {/* <UserInfo name="@david-mcgurrin" numPosts="50"/> */}
       </aside>
       <section>
         <h2>Micropost Feed</h2>

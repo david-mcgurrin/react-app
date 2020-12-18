@@ -15,7 +15,7 @@ function UserInfo() {
   
   return  <div>
     <h2>{user.author}</h2>
-    <p>{count} posts</p>
+    <p>{count} post</p>
     <textarea rows="4" cols="30">
       
     </textarea>
