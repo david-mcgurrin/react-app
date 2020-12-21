@@ -8,27 +8,14 @@ import Home from './components/Home';
 import About from './components/About';
 import Account from './components/Account';
 import Footer from './components/Footer';
+import PostList from './components/PostList';
 
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header/>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/account">
-            <Account />
-          </Route>
-          <Route path="/">
-            <Home/>
-          </Route>
-        </Switch>
-        <Footer/>
-      </div>
+      <PostList/>
     </Router>
   );
 }
