@@ -1,0 +1,18 @@
+.micropost_feed ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.micropost_feed li {
+  background: #dcdcdc;
+  padding: 10px;
+}
+
+.micropost_feed li:nth-child(odd) {
+  background: #efefef;
+  padding: 10px;
+}
+
+.micropost_feed .author {
+  font-weight: 700;
+}
