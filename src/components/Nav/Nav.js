@@ -15,6 +15,12 @@ function Nav() {
         <li>
           <Link to="/account">Account</Link>
         </li>
+        <li>
+          <Link to="/list">Post List</Link>
+        </li>
+        <li>
+          <Link to="/new">New Post</Link>
+        </li>
       </ul>
     </nav>
   );
