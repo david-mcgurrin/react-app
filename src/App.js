@@ -1,13 +1,15 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Header from './components/Header';
-import Main from './components/Main';
+import Home from './components/Home';
 import About from './components/About';
 import Account from './components/Account';
+import Footer from './components/Footer';
+
+import './App.css';
 
 function App() {
   return (
@@ -22,9 +24,10 @@ function App() {
             <Account />
           </Route>
           <Route path="/">
-            <Main/>
+            <Home/>
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );
