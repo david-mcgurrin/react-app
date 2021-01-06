@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from "react";
 
-function UserInfo() {
+const Account = () => {
   const [user, setUser] = useState([]);
-  const count = 1;
 
   useEffect(() => {
     async function getData() {
@@ -12,14 +11,10 @@ function UserInfo() {
     }
     getData();
   }, []);
-  
-  return  <div>
-    <h2>{user.author}</h2>
-    <p>{count} posts</p>
-    <textarea rows="4" cols="30">
-      
-    </textarea>
-  </div>
-}
 
-export default UserInfo;
+  return <div>
+    <h2>Hello, {user.author}!</h2>
+  </div>
+};
+
+export default Account;

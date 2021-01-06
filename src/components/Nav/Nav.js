@@ -1,16 +1,33 @@
-import React, { Component } from 'react';
+import {
+  Link
+} from "react-router-dom";
 
-class Nav extends Component {
-  render() {
-    return <nav>
-      <ul>
-        <li>Home</li>
-        <li>Help</li>
-        <li>Users</li>
-        <li>Account</li>
-      </ul>
-    </nav>
-  }
+function Nav() {
+  return (
+    <div className="nav">
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/account">Account</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 }
 
 export default Nav;
+
+function About() {
+return <h2>About</h2>;
+}
+
+function Users() {
+return <h2>Users</h2>;
+}
