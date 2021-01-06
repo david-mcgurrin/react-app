@@ -1,0 +1,12 @@
+.post {
+  padding: 20px 5px;
+}
+
+.post .content {
+  font-size: 1.5em;
+  padding-bottom: 5px;
+}
+
+.post .info {
+  color: #7d7d7d;
+}
