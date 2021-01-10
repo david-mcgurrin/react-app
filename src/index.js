@@ -4,17 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { ApolloProvider } from 'react-apollo';
-import { ApolloClient } from 'apollo-client';
-import { createHttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-
-const link = createHttpLink({
-  uri: 'https://ruby-on-rails-tutorial.myshopify.io/graphql'
-});
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  link: link,
+  uri: 'https://ruby-on-rails-tutorial.myshopify.io/graphql',
   cache: new InMemoryCache()
 });
 
