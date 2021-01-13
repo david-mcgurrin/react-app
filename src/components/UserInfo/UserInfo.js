@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import UserPostsCount from '../UserPostsCount';
 import md5 from 'md5';
-import {AppContext} from '../../App';
 
 import './UserInfo.css';
 
@@ -18,10 +17,6 @@ const USER_QUERY = gql`
 
 function UserInfo() {
 
-  const visible = useContext(AppContext);
-
-  console.log('context');
-  console.log(visible);
 
   const { loading, error, data } = useQuery(USER_QUERY);
   console.log(data);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import UserInfo from '../UserInfo';
 import NewPost from '../NewPost';
 import PostList from '../PostList';
@@ -8,15 +8,13 @@ import './Home.css';
 
 const Home = () => {
 
-  const [postContent, setPostContent] = useState("");
-
   return <main>
     <aside className="homepage-user">
       <UserInfo/>
-      <NewPost setPostContent={setPostContent} postContent={postContent}/>
+      <NewPost/>
     </aside>
     <section className="homepage-feed">
-      <PostList postContent={postContent}/>
+      <PostList/>
     </section>
   </main>
 }

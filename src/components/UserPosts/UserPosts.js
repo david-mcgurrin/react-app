@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import { gql, useQuery } from '@apollo/client';
 import Post from '../Post';
+import {AppContext} from '../../context/AppContext';
 
 const POSTS_QUERY = gql`
   query {
@@ -18,11 +19,16 @@ const POSTS_QUERY = gql`
 
 
 const UserPost = () => {
-  const { loading, error, data } = useQuery(POSTS_QUERY);
+  const newPost = useContext(AppContext);
+  const { loading, error, data, refetch } = useQuery(POSTS_QUERY);
   console.log(data);
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
+
+  if (newPost.posted) {
+    refetch();
+  }
 
   return (
     <>

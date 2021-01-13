@@ -1,6 +1,7 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useState, useContext} from 'react';
 import {Button, Modal} from '@shopify/polaris';
 import NewPost from '../NewPost';
+import {AppContext} from '../../context/AppContext';
 
 export default function PostModal() {
   const [active, setActive] = useState(false);
@@ -11,7 +12,13 @@ export default function PostModal() {
     handleModalChange();
   };
 
+  const newPost = useContext(AppContext);
+
   const activator = <Button primary onClick={handleModalChange}>New Post</Button>;
+
+  if (newPost.posted && active) {
+    setActive(false);
+  }
 
   return (
     <div className="new-post-modal">

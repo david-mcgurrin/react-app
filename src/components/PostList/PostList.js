@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import { gql, useQuery } from '@apollo/client';
 import Post from '../Post';
+import {AppContext} from '../../context/AppContext';
 
 import './PostList.css';
 
@@ -18,22 +19,23 @@ const POSTS_QUERY = gql`
 }
 `;
 
+const PostList = () => {
 
+  const newPost = useContext(AppContext);
 
-const PostList = ({postContent}) => {
-  const { loading, error, data } = useQuery(POSTS_QUERY);
+  const { loading, error, data, refetch } = useQuery(POSTS_QUERY);
   console.log(data);
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
+  if (newPost.posted) {
+    refetch();
+    newPost.updateFeed();
+  }
+
   return (
-    <div className="">
-      {/* <li>
-        <p className="author">Example User</p>
-        <p className="content">{postContent}</p>
-        <p className="info">Just Now</p>
-      </li> */}
+    <div>
       {data.microposts.map(post => {
         return <li key={post.id}>
           <Post micropost={post}/>
