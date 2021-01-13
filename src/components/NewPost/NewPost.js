@@ -1,7 +1,8 @@
-import React, {useState, useCallback} from "react";
+import React, {useState, useCallback, useContext} from "react";
 import {TextField, Button, Form, FormLayout} from '@shopify/polaris'
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
+import {AppContext} from '../../context/AppContext';
 
 const ADD_POST = gql`
   mutation CreatePost($content: String!) {
@@ -17,17 +18,21 @@ const ADD_POST = gql`
   }
 `;
 
-const NewPost = (props) => {
-
-  console.log(props);
+const NewPost = () => {
 
   // const {setPostContent, postContent} = props;
+  const newPost = useContext(AppContext);
 
   const [postContent, setPostContent] = useState("");
   const handlePostContentChange = useCallback((newPostContent) => setPostContent(newPostContent), []);
 
 
-  const [addPost, { loading: mutationLoading, error: mutationError }] = useMutation(ADD_POST);
+  const [addPost, { loading: mutationLoading, error: mutationError }] = useMutation(ADD_POST, {
+    onCompleted: (data) => {
+      newPost.updateFeed();
+      setPostContent('');
+    }
+  });
 
 
   function handleFormSubmit(_event) {
@@ -36,9 +41,14 @@ const NewPost = (props) => {
     addPost({ variables: { content: postContent } });
   }
 
+  
 
   return (
       <div className="new-post">
+        {/* <button
+          onClick={ac.toggleVisible}>
+          Toggle Visible
+        </button> */}
           <Form onSubmit={handleFormSubmit}>
             <FormLayout>
               {mutationLoading && <p>Loading...</p>}
@@ -56,9 +66,6 @@ const NewPost = (props) => {
               <Button primary submit>Submit</Button>
             </FormLayout>
           </Form>
-          {/* <button onClick={() => setList("[1,2,3,4]")}>
-              Click me
-            </button> */}
       </div>
   )
 };

@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import {AppProvider, DisplayText} from '@shopify/polaris';
+import {AppProvider} from '@shopify/polaris';
 import enTranslations from '@shopify/polaris/locales/en.json'
 
 import Header from './components/Header';
@@ -15,22 +15,17 @@ import Footer from './components/Footer';
 import PostList from './components/PostList';
 import NewPost from './components/NewPost';
 import Users from './components/Users';
-import PostModal from './components/PostModal';
 
 import '@shopify/polaris/dist/styles.css';
 
+import AppContextProvider from './context/AppContext';
+
 import './App.css';
-
-const defaultContext = {
-  visible: true
-}
-
-export const AppContext = React.createContext(defaultContext);
 
 function App() {
   return (
-    <AppProvider i18n={enTranslations} value={defaultContext}>
-      <AppContext.Provider value={defaultContext}>
+    <AppProvider i18n={enTranslations}>
+      <AppContextProvider>
         <Router>
           <div className="App">
             <Header/>
@@ -57,7 +52,7 @@ function App() {
             <Footer/>
           </div>
         </Router>
-      </AppContext.Provider>
+      </AppContextProvider>
     </AppProvider>
   );
 }
