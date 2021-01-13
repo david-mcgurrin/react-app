@@ -1,0 +1,30 @@
+.users {
+  padding-top: 120px;
+  width: 50%;
+  margin: auto;
+  
+}
+
+.users div {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #8d8d8d;
+}
+
+.users li {
+  display: flex;
+  align-items: center;
+}
+
+.users .content {
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+
+
+.users img {
+  width: 50px;
+}

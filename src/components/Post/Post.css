@@ -1,0 +1,23 @@
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  width: 50px;
+}
+
+.user-info .post-info {
+  margin-left: 15px;
+}
+
+.user-info .author {
+  font-weight: 700;
+}
+
+.user-info .content {
+}
+
+.user-info .info {
+  font-size: .75em;
+}
