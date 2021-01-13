@@ -2,25 +2,22 @@ import React from "react";
 import { gql, useQuery } from '@apollo/client';
 import Post from '../Post';
 
-import './PostList.css';
-
 const POSTS_QUERY = gql`
   query {
-    microposts {
-      id
-      content
+    userMicroposts(userId: 1) {
+      content,
       createdAt
       user {
         name
         email
       }
     }
-}
+  }
 `;
 
 
 
-const PostList = ({postContent}) => {
+const UserPost = () => {
   const { loading, error, data } = useQuery(POSTS_QUERY);
   console.log(data);
 
@@ -28,21 +25,16 @@ const PostList = ({postContent}) => {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <div className="">
-      {/* <li>
-        <p className="author">Example User</p>
-        <p className="content">{postContent}</p>
-        <p className="info">Just Now</p>
-      </li> */}
-      {data.microposts.map(post => {
+    <>
+      {data.userMicroposts.map(post => {
         return <li key={post.id}>
           <Post micropost={post}/>
         </li>
         })
       }
-    </div>
+    </>
 
   )
 };
 
-export default PostList;
+export default UserPost;

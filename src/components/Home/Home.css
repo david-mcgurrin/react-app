@@ -5,10 +5,12 @@ main {
   min-height: 100vh;
 }
 
-aside {
+.homepage-user {
   width: 33.3%;
+  padding: 0 30px;
 }
 
-section {
+.homepage-feed {
   width: 66.6%;
+  padding: 0 30px;
 }

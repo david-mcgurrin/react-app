@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from "react";
-import {Card, TextField, Button, Form, Layout, FormLayout} from '@shopify/polaris'
+import {TextField, Button, Form, FormLayout} from '@shopify/polaris'
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -17,69 +17,49 @@ const ADD_POST = gql`
   }
 `;
 
-const NewPost = () => {
-  const [postTitle, setPostTitle] = useState("");
-  const handlePostTitleChange = useCallback((newPostTitle) => setPostTitle(newPostTitle), []);
+const NewPost = (props) => {
+
+  console.log(props);
+
+  // const {setPostContent, postContent} = props;
 
   const [postContent, setPostContent] = useState("");
   const handlePostContentChange = useCallback((newPostContent) => setPostContent(newPostContent), []);
 
-  const [postTags, setPostTags] = useState("");
-  const handlePostTagsChange = useCallback((newPostTags) => setPostTags(newPostTags), []);
 
   const [addPost, { loading: mutationLoading, error: mutationError }] = useMutation(ADD_POST);
 
 
   function handleFormSubmit(_event) {
-    console.log(postTitle);
     console.log(postContent);
-    console.log(postTags);
 
     addPost({ variables: { content: postContent } });
   }
 
 
   return (
-    <Layout>
-      <div className="main">
-        <Card sectioned title="Add New Post">
+      <div className="new-post">
           <Form onSubmit={handleFormSubmit}>
             <FormLayout>
               {mutationLoading && <p>Loading...</p>}
               {mutationError && <p>Error: Please try again</p>}
               <TextField 
-                label="Post title"
-                placeholder="Enter a title"
-                helpText="Make it a good on!"
-                value={postTitle}
-                onChange={handlePostTitleChange}
-              />
-
-              <TextField 
-                label="Post content"
+                label="Add a post"
                 placeholder="Enter the content"
-                helpText="Make it a good un!"
+                helpText="Make it a good one!"
                 multiline
                 maxLength={240}
                 showCharacterCount
                 value={postContent}
                 onChange={handlePostContentChange}
               />
-
-              <TextField
-                label="Tags"
-                placeholder="#polaris"
-                helpText="Enter the tags for your post, separated by comma."
-                value={postTags}
-                onChange={handlePostTagsChange}
-              />
-
               <Button primary submit>Submit</Button>
             </FormLayout>
           </Form>
-        </Card>
+          {/* <button onClick={() => setList("[1,2,3,4]")}>
+              Click me
+            </button> */}
       </div>
-    </Layout>
   )
 };
 

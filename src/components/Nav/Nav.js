@@ -1,25 +1,21 @@
-import {
-  Link
-} from "react-router-dom";
+import { NavLink }  from "react-router-dom";
+import PostModal from '../PostModal';
 
 function Nav() {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink activeClassName="main-active" exact to="/">Home</NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink activeClassName="users-active" to="/users">Users</NavLink>
         </li>
         <li>
-          <Link to="/account">Account</Link>
+          <NavLink activeClassName="account-active" to="/account">Account</NavLink>
         </li>
         <li>
-          <Link to="/list">Post List</Link>
-        </li>
-        <li>
-          <Link to="/new">New Post</Link>
+          <PostModal/>
         </li>
       </ul>
     </nav>
@@ -27,11 +23,3 @@ function Nav() {
 }
 
 export default Nav;
-
-function About() {
-return <h2>About</h2>;
-}
-
-function Users() {
-return <h2>Users</h2>;
-}
