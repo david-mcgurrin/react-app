@@ -1,3 +1,4 @@
+import React from 'react';
 import UserPosts from '../UserPosts';
 
 import './Account.css';
