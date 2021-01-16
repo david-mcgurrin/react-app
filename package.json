@@ -14,11 +14,18 @@
     "md5": "^2.3.0",
     "react": "^17.0.1",
     "react-apollo": "^3.1.5",
-    "react-dom": "^17.0.1",
+    "react-dom": "^16.14.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "waait": "^1.0.5",
     "web-vitals": "^0.2.4"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,6 +39,15 @@
       "react-app/jest"
     ]
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -43,5 +59,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@apollo/react-testing": "^4.0.0",
+    "@babel/preset-react": "^7.12.10",
+    "@shopify/graphql-testing": "^4.3.0",
+    "@shopify/react-testing": "^2.2.0"
   }
 }
